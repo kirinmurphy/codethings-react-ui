@@ -1,7 +1,9 @@
 import { Ellipticizer } from './widgets/Ellipticizer';
-
-export const something = 24;
+import { Markdownizer } from './widgets/Markdownizer';
+import { CommaSeparatedList } from './widgets/CommaSeparatedList';
 
 export {
-  Ellipticizer
+  Ellipticizer,
+  Markdownizer,
+  CommaSeparatedList
 }

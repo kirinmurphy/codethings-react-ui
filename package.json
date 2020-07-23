@@ -36,5 +36,8 @@
   },
   "files": [
     "dist"
-  ]
+  ],
+  "dependencies": {
+    "react-markdown": "^4.3.1"
+  }
 }
