@@ -1,4 +1,4 @@
-import Ellipticizer from './widgets/Ellipticizer';
+import { Ellipticizer } from './widgets/Ellipticizer';
 
 export const something = 24;
 
