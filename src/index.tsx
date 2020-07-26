@@ -6,15 +6,19 @@ import { Markdownizer } from './widgets/Markdownizer';
 import { CommaSeparatedList } from './widgets/CommaSeparatedList';
 import { Dropdownizer } from './widgets/Dropdownizer';
 import { LoadingIcon } from './widgets/LoadingIcon';
+import { Popupizer } from './widgets/Popupizer';
 
 
 export {
+  // utils
   useTriggerOverride,
   useOutsideTriggerListener,
 
+  // components
   Ellipticizer,
   Markdownizer,
   CommaSeparatedList,
   Dropdownizer,
-  LoadingIcon
+  LoadingIcon,
+  Popupizer
 }
