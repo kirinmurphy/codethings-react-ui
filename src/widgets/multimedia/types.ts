@@ -1,9 +1,9 @@
 
 // MARQUEE PROPS
-export type MarqueeType = 'iframe' | 'slideshow' | 'video';
+export type MultimediaType = 'iframe' | 'slideshow' | 'video';
 
-export interface MarqueeProps {
-  type: MarqueeType;
+export interface MultimediaProps {
+  type: MultimediaType;
   images: string[];
   video: VideoProps;
   iframeUrl: string;

@@ -7,12 +7,11 @@ interface Props {
 
 export function Ellipticizer ({ children, width }: Props): JSX.Element {
   return (
-    <span className="ellipticizer">
+    <span style={{width: width || 'auto'}} className="ellipticizer">
       {children}
       
       <style jsx>{`
         .ellipticizer {
-          width: ${width || 'auto'};
           display:inline-block;
           white-space:nowrap;
           text-overflow:ellipsis;

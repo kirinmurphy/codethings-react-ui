@@ -5,7 +5,7 @@ import {
   triggerOverrideCallbackType,
 } from './useTriggerOverride';
 
-export function useOutsideTriggerListener (
+export function useCallbackOnExternalEventTrigger (
   ref:GenericRefTypeUntilIFigureOutTheCommonDenominator, 
   callback:triggerOverrideCallbackType): void {
   

@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { getFormattedTime } from './helperGetFormattedTime';
+import { getFormattedVideoTime } from './helperGetFormattedVideoTime';
 import { GenericRefTypeUntilIFigureOutTheCommonDenominator } from '../../types';
 
 interface Props {
@@ -10,8 +10,8 @@ interface Props {
 export function VideoPlayerTime ({ videoRef }: Props): JSX.Element {
   return !!videoRef?.current ? (
     <span className="video-time">
-      <span>{getFormattedTime(videoRef.current.currentTime)}</span> / 
-      <span>{getFormattedTime(videoRef.current.duration)}</span>
+      <span>{getFormattedVideoTime(videoRef.current.currentTime)}</span> / 
+      <span>{getFormattedVideoTime(videoRef.current.duration)}</span>
     </span>
   ): <></>;
 }

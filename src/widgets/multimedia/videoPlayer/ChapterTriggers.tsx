@@ -11,9 +11,14 @@ interface Props {
   currentTime: number;
 }
 
-export function ChapterTriggers ({ chapters, updatePlayerTime, currentTime }: Props): JSX.Element {
+export function ChapterTriggers ({ 
+  chapters, 
+  updatePlayerTime, 
+  currentTime }: Props): JSX.Element {
+
   if ( !chapters || chapters.length < 2 ) { return (<></>); }
 
+  console.log('gac', getActiveChapter(chapters, currentTime))
   const activeChapter = getActiveChapter(chapters, currentTime);
   const activeChapterIndex = chapters.indexOf(activeChapter);
 
@@ -72,8 +77,11 @@ export function ChapterTriggers ({ chapters, updatePlayerTime, currentTime }: Pr
 function getActiveChapter (chapters:FormattedVideoChapterProps[], currentTime: number) {
   return chapters.filter((chapter) => {
     const currentTimeIsAfterChapterStart = currentTime > chapter.startTime;
+    console.log('ctafst', currentTimeIsAfterChapterStart);
     const nextChapterStartTime = chapter.nextChapterStartTime;
+    console.log('ncst', nextChapterStartTime);
     const currentTimeIsBeforeNextChapter = !!nextChapterStartTime && currentTime < nextChapterStartTime;
+    console.log('ctibnc', currentTimeIsBeforeNextChapter);
     return currentTimeIsAfterChapterStart && (!nextChapterStartTime || currentTimeIsBeforeNextChapter);
   })[0];
 }

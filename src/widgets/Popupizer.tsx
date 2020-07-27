@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useRef } from 'react';
 
-import { useOutsideTriggerListener } from '../utils/useOutsideTriggerListener';
+import { useCallbackOnExternalEventTrigger } from '../utils/useCallbackOnExternalEventTrigger';
 
 import '../utils/fontAwesomeLibrary';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -14,7 +14,7 @@ interface Props {
 export function Popupizer ({ children, closeAction }: Props): JSX.Element {
 
   const popupRef = useRef<HTMLDivElement>(null);
-  useOutsideTriggerListener(popupRef, closeAction);
+  useCallbackOnExternalEventTrigger(popupRef, closeAction);
 
   return (
     <>

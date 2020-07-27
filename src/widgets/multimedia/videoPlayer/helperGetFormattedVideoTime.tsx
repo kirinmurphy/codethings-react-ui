@@ -1,4 +1,4 @@
-export function getFormattedTime (duration: number | undefined): string | null {
+export function getFormattedVideoTime (duration: number | undefined): string | null {
   if ( duration === undefined ) { return null; }
   if ( duration === 0 ) { return '0:00'; }
   const hours = Math.floor(duration / 3600);

@@ -4,7 +4,7 @@ import { CommaSeparatedListProps } from './types';
 import { Markdownizer } from './Markdownizer';
 
 interface Props {
-  name: string;
+  name?: string;
   collection?: CommaSeparatedListProps;
 }
 
@@ -12,7 +12,8 @@ export function CommaSeparatedList ({ name, collection }: Props): JSX.Element {
   return collection && collection.length ? (
     <>
       <div>
-        <strong>{name}: </strong>
+        {!!name && <strong>{name}: </strong>}
+        
         <span>{collection.map((item, index, array) => {
           
           const possibleComma = index < array.length - 1 ? ', ' : '';

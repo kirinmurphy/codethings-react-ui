@@ -12,7 +12,6 @@ const markdownTypesAllowed: ReactMarkdown.NodeType[] = [
 interface Props {
   source: string;
   useAllowedTypes?: boolean;
-  useRaw?: boolean;
 }
 
 interface OptionsProps {

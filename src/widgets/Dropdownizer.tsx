@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useState, useRef } from 'react';
 
-import { useOutsideTriggerListener } from '../utils/useOutsideTriggerListener';
+import { useCallbackOnExternalEventTrigger } from '../utils/useCallbackOnExternalEventTrigger';
 
 interface Props {
   title: string | JSX.Element;
@@ -19,7 +19,7 @@ export function Dropdownizer ({ title, content, orientation = 'below' }: Props):
 
   const closeDropdown = () => setActiveState(false);
 
-  useOutsideTriggerListener(dropdownRef, closeDropdown);
+  useCallbackOnExternalEventTrigger(dropdownRef, closeDropdown);
 
   const dropdownParentHeight = dropdownRef.current?.offsetHeight;
 
