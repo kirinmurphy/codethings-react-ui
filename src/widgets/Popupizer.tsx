@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useRef } from 'react';
 
 import { useOutsideTriggerListener } from '../utils/useOutsideTriggerListener';
 
@@ -12,7 +13,7 @@ interface Props {
 
 export function Popupizer ({ children, closeAction }: Props): JSX.Element {
 
-  const popupRef = React.useRef<HTMLDivElement>(null);
+  const popupRef = useRef<HTMLDivElement>(null);
   useOutsideTriggerListener(popupRef, closeAction);
 
   return (

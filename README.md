@@ -11,3 +11,6 @@ https://medium.com/@the1mills/how-to-test-your-npm-module-without-publishing-it-
 
 ### NPM Publish
 https://zellwk.com/blog/publish-to-npm/
+
+### Styled JSX
+https://github.com/vercel/next.js/issues/7595

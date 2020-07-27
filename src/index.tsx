@@ -8,6 +8,7 @@ import { Dropdownizer } from './widgets/Dropdownizer';
 import { LoadingIcon } from './widgets/LoadingIcon';
 import { Popupizer } from './widgets/Popupizer';
 
+import { Marquee } from './widgets/marquee/Marquee';
 
 export {
   // utils
@@ -20,5 +21,6 @@ export {
   CommaSeparatedList,
   Dropdownizer,
   LoadingIcon,
-  Popupizer
+  Popupizer,
+  Marquee
 }
