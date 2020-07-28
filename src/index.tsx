@@ -1,9 +1,11 @@
 import { useTriggerOverride } from './utils/useTriggerOverride';
 import { useCallbackOnExternalEventTrigger } from './utils/useCallbackOnExternalEventTrigger';
 
+
 import { Ellipticizer } from './widgets/Ellipticizer';
-import { Markdownizer } from './widgets/Markdownizer';
-import { CommaSeparatedList } from './widgets/CommaSeparatedList';
+import { Markdownizer, MarkdownizerProps } from './widgets/Markdownizer';
+import { CommaSeparatedList, CommaSeparatedListCollectionType } from './widgets/CommaSeparatedList';
+
 import { Dropdownizer } from './widgets/Dropdownizer';
 import { LoadingIcon } from './widgets/LoadingIcon';
 import { Popupizer } from './widgets/Popupizer';
@@ -15,6 +17,10 @@ export {
   // custom hooks
   useTriggerOverride,
   useCallbackOnExternalEventTrigger,
+
+  // Props
+  MarkdownizerProps,
+  CommaSeparatedListCollectionType,
 
   // components
   LoadingIcon,
@@ -29,4 +35,5 @@ export {
   hasMultimediaContent,
   getFormattedVideoTime,
   getFormattedChapters
+
 }

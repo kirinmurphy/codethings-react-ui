@@ -9,7 +9,7 @@ const markdownTypesAllowed: ReactMarkdown.NodeType[] = [
   'link'
 ];
 
-interface Props {
+export interface MarkdownizerProps {
   source: string;
   useAllowedTypes?: boolean;
 }
@@ -21,7 +21,7 @@ interface OptionsProps {
   unwrapDisallowed?: boolean;
 }
 
-export function Markdownizer ({ source, useAllowedTypes = false }: Props): JSX.Element {  
+export function Markdownizer ({ source, useAllowedTypes = false }: MarkdownizerProps): JSX.Element {  
 
   const options: OptionsProps = {
     source: source,

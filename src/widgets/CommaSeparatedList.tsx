@@ -1,11 +1,12 @@
 import * as React from 'react';
 
-import { CommaSeparatedListProps } from './types';
+export type CommaSeparatedListCollectionType = string[];
+
 import { Markdownizer } from './Markdownizer';
 
 interface Props {
   name?: string;
-  collection?: CommaSeparatedListProps;
+  collection?: CommaSeparatedListCollectionType;
 }
 
 export function CommaSeparatedList ({ name, collection }: Props): JSX.Element {
