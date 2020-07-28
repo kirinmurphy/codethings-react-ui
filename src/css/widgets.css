@@ -1,0 +1,7 @@
+:root {
+  --test-color: green;
+}
+
+.ellipticizer {
+  background: var(--test-color);
+}

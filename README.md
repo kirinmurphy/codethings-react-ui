@@ -196,6 +196,8 @@ https://juliangaramendy.dev/react-typescript-library-tsdx/
 https://github.com/facebook/react/issues/13991
 https://medium.com/@the1mills/how-to-test-your-npm-module-without-publishing-it-every-5-minutes-1c4cb4b369be
 https://stackoverflow.com/questions/57825421/invalid-hook-call-warning-linking-a-react-app-and-a-local-npm-package
+https://github.com/whitecolor/yalc
+https://chevtek.io/you-can-finally-npm-link-packages-that-contain-peer-dependencies/
 
 ### NPM Publish
 https://zellwk.com/blog/publish-to-npm/
@@ -203,3 +205,7 @@ https://zellwk.com/blog/publish-to-npm/
 ### Styled JSX
 https://github.com/vercel/next.js/issues/7595    
 https://kevinjalbert.com/jest-snapshots-reducing-styled-jsx-noise/
+
+### PostCSS
+https://nextjs.org/docs/basic-features/built-in-css-support#import-styles-from-node_modules
+https://www.learnwithjason.dev/blog/learn-rollup-css/

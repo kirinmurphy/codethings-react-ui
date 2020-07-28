@@ -1,6 +1,7 @@
+import './css/widgets.css';
+
 import { useTriggerOverride } from './utils/useTriggerOverride';
 import { useCallbackOnExternalEventTrigger } from './utils/useCallbackOnExternalEventTrigger';
-
 
 import { Ellipticizer } from './widgets/Ellipticizer';
 import { Markdownizer, MarkdownizerProps } from './widgets/Markdownizer';
