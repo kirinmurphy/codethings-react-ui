@@ -1,6 +1,10 @@
 import typescript from 'rollup-plugin-typescript2';
 import pkg from './package.json';
+
 import postcss from 'rollup-plugin-postcss';
+import nested from 'postcss-nested';
+import cssnext from 'postcss-cssnext';
+import cssnano from 'cssnano';
 
 export default {
   input: 'src/index.tsx',
@@ -18,7 +22,11 @@ export default {
     // typescript({ objectHashIgnoreUnknownHack: true })
     postcss({
       extensions: [ '.css' ],
-      extract: 'styles.css'
+      extract: 'styles.css',
+      plugins: [
+        nested(),
+        cssnano()
+      ]
     }),
   ],
   external: ['react', 'react-dom']
