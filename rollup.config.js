@@ -3,7 +3,7 @@ import pkg from './package.json';
 
 import postcss from 'rollup-plugin-postcss';
 import nested from 'postcss-nested';
-import cssnext from 'postcss-cssnext';
+// import cssnext from 'postcss-cssnext';
 import cssnano from 'cssnano';
 
 export default {
@@ -25,6 +25,7 @@ export default {
       extract: 'styles.css',
       plugins: [
         nested(),
+        // cssnext({ warnForDuplicates: false }),
         cssnano()
       ]
     }),

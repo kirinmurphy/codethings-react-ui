@@ -11,30 +11,18 @@ interface Props {
 
 export function CommaSeparatedList ({ name, collection }: Props): JSX.Element {
   return collection && collection.length ? (
-    <>
-      <div>
-        {!!name && <strong>{name}: </strong>}
+    <div className="comma-separated-list">
+      {!!name && <strong>{name}: </strong>}
+      
+      <span>{collection.map((item, index, array) => {
         
-        <span>{collection.map((item, index, array) => {
-          
-          const possibleComma = index < array.length - 1 ? ', ' : '';
-          const content = `${item}${possibleComma}`;
-          
-          return <span key={item}>
-            <Markdownizer source={content} useAllowedTypes={true} />
-          </span>
-        })}</span>
-      </div>
-
-      <style jsx>{`
-        div { 
-          margin-bottom:.2rem;
-        }
-
-        strong { 
-          color:var(--textcolor-dark); 
-        }
-      `}</style>
-    </>
+        const possibleComma = index < array.length - 1 ? ', ' : '';
+        const content = `${item}${possibleComma}`;
+        
+        return <span key={item}>
+          <Markdownizer source={content} useAllowedTypes={true} />
+        </span>
+      })}</span>
+    </div>
   ) : <></>;
 }

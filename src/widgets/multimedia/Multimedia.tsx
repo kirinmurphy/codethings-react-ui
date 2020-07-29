@@ -5,14 +5,15 @@ import { MultimediaProps } from './types';
 import { SlideshowPopup } from './SlideshowPopup';
 import { VideoPlayer } from './videoPlayer/VideoPlayer';
 
-export function hasMultimediaContent (multimedia: MultimediaProps, projectUrl?: string): boolean {
+export function hasMultimediaContent (multimedia: MultimediaProps): boolean {
   if ( !multimedia ) { return false; }
-  const { type, images, video } = multimedia;
+  const { type, images, video, iframeUrl } = multimedia;
   const hasImages = type === 'slideshow' && !!images && !!images.length;
-  const hasIframe = type === 'iframe' && !!projectUrl;
+  const hasIframe = type === 'iframe' && !!iframeUrl;
   const hasVideo = type === 'video' && !!video && !!video.sources.length;
   return hasIframe || hasImages || hasVideo;
 }
+
 
 export function Multimediaizer ({ 
   type, 
@@ -21,31 +22,10 @@ export function Multimediaizer ({
   iframeUrl }: MultimediaProps): JSX.Element {
 
   return (
-    <>
-      <section className={`multimedia multimedia-${type}`}>
-        {type === 'iframe' && <iframe src={iframeUrl} />}
-        {type === 'slideshow' && <SlideshowPopup images={images} />}
-        {type === 'video' && <VideoPlayer video={video} />}
-      </section>
-      
-      <style jsx>{`
-        .multimedia {
-          position:absolute;
-          top:4px;
-          left:4px;
-          right:4px;
-          bottom:4px;
-        }
-        
-        .multimedia > iframe {
-          position: absolute;
-          left:calc(-12.5% + 1px);
-          top:calc(-12.5% + 1px);
-          width:125%;
-          height:125%;
-          transform:scale(0.8);
-        }
-      `}</style>
-    </>
+    <section className={`multimediaizer multimediaizer-${type}`}>
+      {type === 'iframe' && <iframe src={iframeUrl} />}
+      {type === 'slideshow' && <SlideshowPopup images={images} />}
+      {type === 'video' && <VideoPlayer video={video} />}
+    </section>      
   );
 }

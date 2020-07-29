@@ -49,24 +49,6 @@ export function ChapterSelectionTrigger ({
           ) : <></>;
         })}
       />
-
-      <style jsx>{`
-        .position {
-          margin-right:.5rem;
-          text-transform:uppercase;
-          font-size:var(--fontSize-small);
-          font-weight:bold;
-          color:var(--textcolor-dark);
-        }
-
-        .dropdown-item:hover .position {
-          color:var(--textcolor-inverted);
-        }
-
-        .dropdown-item[data-is-active="true"] {
-          background:var(--textcolor-inverted);
-        }
-      `}</style> 
     </>
   );  
 }

@@ -41,152 +41,44 @@ export function Slideshow ({
   }, [nextIndex, autoRotateDelay, imageCount]);
 
   return (
-    <>
-      <div className="slideshow">
-        <div className="slides">
-          {images.map((image, index) => {
-            const showImage = index === activeIndex;
-            return (
-              <picture data-is-active={showImage} key={index}>
-                {showSmallImageAtMaxWidth && (
-                  <source srcSet={getScreenshotUrl(image, 'small')} media={`(min-width: ${breakpointMaxWidth})`} />
-                )}
-                <source srcSet={getScreenshotUrl(image, 'small')} media={`(max-width:600px)`} />
-                <img src={getScreenshotUrl(image, 'full')} />
-              </picture>
-            );
-          })}
-        </div>
-
-        {images.length > 1 && (
-          <>
-            <div className="back jump-trigger" onClick={() => setActiveIndex(backIndex)}>
-              <span className="jump-trigger-icon"></span>
-            </div>
-
-            <div className="next jump-trigger" onClick={() => setActiveIndex(nextIndex)}>
-              <span className="jump-trigger-icon"></span>
-            </div>
-          </>
-        )}
-
-        <ExpandoClicker 
-          buttonText={expandoButtonText}
-          clickCallback={expandoClickCallback} 
-          assetUrl={activeImageUrl}
-        />
+    <div className="slideshow">
+      <div className="slideshow__slides">
+        {images.map((image, index) => {
+          const showImage = index === activeIndex;
+          return (
+            <picture className="slideshow__picture"
+              data-is-active={showImage} key={index}>
+              {showSmallImageAtMaxWidth && (
+                <source srcSet={getScreenshotUrl(image, 'small')} media={`(min-width: ${breakpointMaxWidth})`} />
+              )}
+              <source srcSet={getScreenshotUrl(image, 'small')} media={`(max-width:600px)`} />
+              <img src={getScreenshotUrl(image, 'full')} />
+            </picture>
+          );
+        })}
       </div>
-  
-      <style jsx>{`
-        .slideshow { 
-          position:relative;
-          height:100%;
-          width:100%;
-          border:1px solid #bbb; 
-          overflow:hidden;
-          background:var(--slideshow-background);
-        }
 
-        .slides {
-          position:relative;
-          height:100%;
-          width:100%;
-        }
+      {images.length > 1 && (
+        <>
+          <div className="jump-trigger jump-trigger--back"
+            onClick={() => setActiveIndex(backIndex)}>
+            
+            <span className="jump-trigger__icon"></span>
+          </div>
 
-        img { 
-          position:absolute;
-          top:50%;
-          transform:translateY(-50%);          
-          opacity:0;
-          width:100%;
-          height:auto;
-          transition: opacity .5s;
-        }
+          <div className="jump-trigger jump-trigger--next"
+            onClick={() => setActiveIndex(nextIndex)}>
+            <span className="jump-trigger__icon"></span>
+          </div>
+        </>
+      )}
 
-        picture[data-is-active="true"] img {
-          opacity:1;
-          transition:opacity .2s;
-        }
-
-        .jump-trigger {
-          position:absolute;
-          top:0; 
-          bottom:0; 
-          z-index:3;
-          cursor:pointer;
-        }
-
-        .slideshow .jump-trigger { 
-          width:33%; 
-        }
-
-        .back {
-          left:0;
-        }
-
-        .next {
-          right:0;
-        }
-
-        .jump-trigger-icon {
-          position:absolute;
-          top:50%;
-          transform:translateY(-50%);
-          height:var(--slideshow-trigger-size);
-          width:var(--slideshow-trigger-size); 
-          border-radius:100%;
-          background:var(--slideshow-trigger-background);
-          text-align:center;
-          transition: var(--transition-swoop);
-        }
-
-        .jump-trigger-icon:before {
-          position:relative;
-          top:15px;
-          content:'';
-          display:inline-block;
-          height:12px;
-          width:12px;
-          border-style:solid;
-          border-color:var(--slideshow-trigger-caret);
-          border-width:3px 0 0 3px;
-          transform-origin:center center;
-        }
-
-        .jump-trigger:hover .jump-trigger-icon {
-          background:#fff;
-          transform:translateY(-50%) scale(2);
-          box-shadow:0 0 5px #888;
-        }
-
-        .jump-trigger:active .jump-trigger-icon {
-          transition:var(--transition-bounce);
-          transform:translateY(-50%) scale(1.8);
-        }
-
-        .jump-trigger:hover .jump-trigger-icon:before {
-          border-color:#000;          
-        }
-
-        .back .jump-trigger-icon {
-          left:calc(var(--slideshow-trigger-offset) * -1);
-        }
-
-        .back .jump-trigger-icon:before {
-          transform:rotate(-55deg) skew(-20deg);
-          left:14px;
-        }
-
-        .next .jump-trigger-icon {
-          right:calc(var(--slideshow-trigger-offset) * -1);
-        }
-    
-        .next .jump-trigger-icon:before {
-          transform:rotate(128deg) skew(-20deg);
-          right:12px;
-        }
-      `}</style>
-    </>
+      <ExpandoClicker 
+        buttonText={expandoButtonText}
+        clickCallback={expandoClickCallback} 
+        assetUrl={activeImageUrl}
+      />
+    </div>
   );
 }
 

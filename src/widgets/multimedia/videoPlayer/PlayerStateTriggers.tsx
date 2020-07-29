@@ -7,6 +7,7 @@ import {
   PLAYER_ACTION_PLAY,
   PLAYER_ACTION_PAUSE,
 } from './helperPlayerStateReducer';
+import { faPlay, faPause } from '@fortawesome/free-solid-svg-icons';
 
 interface Props {
   playerState: PlayerStateType;
@@ -19,14 +20,14 @@ export function PlayerStateTriggers ({ playerState, updatePlayerState }: Props):
       {playerState !== PLAYER_STATE_PLAYING && (
         <PlayerStateTrigger 
           trigger={() => { updatePlayerState(PLAYER_ACTION_PLAY); }}
-          icon={['fas', 'play']}
+          icon={faPlay}
         />
       )}
 
       {playerState === PLAYER_STATE_PLAYING && (
         <PlayerStateTrigger 
           trigger={() => { updatePlayerState(PLAYER_ACTION_PAUSE); }} 
-          icon={['fas', 'pause']}
+          icon={faPause}
         />
       )}
     </span>

@@ -14,15 +14,12 @@ interface IconProps {
 function JumpIconTrigger (props: IconProps): JSX.Element {
   const { triggerStartTime, show, updatePlayerTime, icon } = props;
   return show ? (
-    <span 
+    <span className="jump-icon-trigger" 
       onClick={() => {
         if ( triggerStartTime !== undefined ) { updatePlayerTime(triggerStartTime); }
       }}>
       
       <FontAwesomeIcon icon={icon} />
-      <style jsx>{`
-        span { cursor:pointer; }
-      `}</style>
     </span>
   ): <></>;
 }

@@ -1,0 +1,45 @@
+:root {
+  /* Dropdownizer  */
+  --dropdownizerWindow-bgColor: rgba(241, 243, 248, 0.95);
+  --dropdownizerWindow-shadowColor: #aaa;
+  --dropdownItem-textColor: green;
+  --dropdownItem-borderColor: #ddd;
+  --dropdownItem-hover-bgColor: #334;
+  --dropdownItem-hover-fontWeight: bold;
+
+  /* Popupizer */
+  --popupizerWindow-maxWidth: 1100px;
+  --popupizerWindow-maxHeight: 900px;
+  --popupizerWindow-bgColor: #fff;
+  --popupizerWindow-textColor: inherit;
+  --popupizerOverlay-bgColor: rgba(0,0,0, .5);
+  --popupizerCloseTrigger-textColor: inherit;
+  --popupizerCloseTrigger-shadowColor: #999;
+  --popupizerCloseTrigger-bgColor: #fff;
+  --popupizerCloseTrigger-hover-scale: 1.3;
+
+  /* ExpandoClicker */
+  --expandoClickerButton-bgColor: #000;
+  --expandoClickerButton-textColor: #fff;
+
+  /* Slideshow  */
+  --slideshow-bgColor: #eee;
+  --slideshow-borderColor: #bbb;
+  --slideshowJumpTrigger-size: 50px;
+  --slideshowJumpTrigger-offset:  calc(var(--slideshowJumpTrigger-size) / 2);
+
+  --slideshowJumpTrigger-bgColor: rgba(0,0,0,.5);
+  --slideshowJumpTriggerArrow-borderColor: #fff;
+  --slideshowJumpTrigger-hover-bgColor:#fff;
+  --slideshowJumpTrigger-hover-shadowColor:#fff;
+  --slideshowJumpTriggerArrow-hover-borderColor:#000;
+
+  /* Video Player */
+  --videoPlayerVideoFrame-bgColor: #000;
+  --videoPlayerCpanel-bgColor: #000;
+  --videoPlayerCpanel-textColor: var(--textcolor-inverted);
+  --videoPlayerCpanel-iconColor: yellow;
+  --videoPlayerCpanel-borderColor: #ddd;  
+  --videoPlayerProgressMeter-bgColor: #606;
+  --videoPlayerProgressMeterPercentComplete-bgColor: #909;
+}

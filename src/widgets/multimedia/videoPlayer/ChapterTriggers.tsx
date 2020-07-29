@@ -2,6 +2,8 @@ import * as React from 'react';
 
 import { FormattedVideoChapterProps } from '../types';
 
+import { faBackward, faForward } from '@fortawesome/free-solid-svg-icons';
+
 import { JumpBackIconTrigger, JumpForwardIconTrigger } from './ChapterJumpTriggers';
 import { ChapterSelectionTrigger } from './ChapterSelectionTrigger';
 
@@ -18,7 +20,6 @@ export function ChapterTriggers ({
 
   if ( !chapters || chapters.length < 2 ) { return (<></>); }
 
-  console.log('gac', getActiveChapter(chapters, currentTime))
   const activeChapter = getActiveChapter(chapters, currentTime);
   const activeChapterIndex = chapters.indexOf(activeChapter);
 
@@ -32,21 +33,21 @@ export function ChapterTriggers ({
   return (
     <>
       <span className="trigger-icons">
-        <span className="trigger-icon">
+        <span className="trigger-icons__icon">
           <JumpBackIconTrigger
             triggerStartTime={getStartTimeForBackButton()}
             show={activeChapterIndex > 0}
             updatePlayerTime={(time) => { updatePlayerTime(time); }}
-            icon={['fas', 'backward']}
+            icon={faBackward}
           />
         </span>
 
-        <span className="trigger-icon">
+        <span className="trigger-icons__icon">
           <JumpForwardIconTrigger
             triggerStartTime={activeChapter?.nextChapterStartTime || null}
             show={activeChapterIndex < chapters.length - 1}
             updatePlayerTime={updatePlayerTime} 
-            icon={['fas', 'forward']}
+            icon={faForward}
           />
         </span>
       </span>
@@ -57,19 +58,6 @@ export function ChapterTriggers ({
         activeChapterIndex={activeChapterIndex}
         updatePlayerTime={updatePlayerTime}
       />
-
-      <style jsx>{`
-        .trigger-icons {
-          margin-left:var(--video-control-bar-spacer);
-          width:var(--video-chapter-icon-triggers-width);
-        }
-
-        .trigger-icon {
-          display:inline-block;
-          width:50%;
-          text-align:center;
-        }
-      `}</style>
     </>
   );
 }
@@ -77,11 +65,8 @@ export function ChapterTriggers ({
 function getActiveChapter (chapters:FormattedVideoChapterProps[], currentTime: number) {
   return chapters.filter((chapter) => {
     const currentTimeIsAfterChapterStart = currentTime > chapter.startTime;
-    console.log('ctafst', currentTimeIsAfterChapterStart);
     const nextChapterStartTime = chapter.nextChapterStartTime;
-    console.log('ncst', nextChapterStartTime);
     const currentTimeIsBeforeNextChapter = !!nextChapterStartTime && currentTime < nextChapterStartTime;
-    console.log('ctibnc', currentTimeIsBeforeNextChapter);
     return currentTimeIsAfterChapterStart && (!nextChapterStartTime || currentTimeIsBeforeNextChapter);
   })[0];
 }

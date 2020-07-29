@@ -1,0 +1,33 @@
+.video-player {
+  /* Chapter selection trigger */
+  .dropdown-item {
+    .position {
+      margin-right:.5rem;
+      text-transform:uppercase;
+      font-size:var(--fontSize-small);
+      font-weight:bold;
+      color:var(--textcolor-dark);
+    }
+
+    &:hover .position {
+      color:var(--textcolor-inverted);
+    }
+
+    &[data-is-active="true"] {
+      background:var(--textcolor-inverted);
+    }
+  }
+
+  /* Chapter jump triggers */
+  .trigger-icons {
+    margin-left:var(--video-control-bar-spacer);
+    width:var(--video-chapter-icon-triggers-width);
+
+    &__icon {
+      display:inline-block;
+      width:50%;
+      text-align:center;
+      cursor:pointer
+    }
+  }
+}

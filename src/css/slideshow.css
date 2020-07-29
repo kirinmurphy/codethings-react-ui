@@ -1,0 +1,109 @@
+.slideshow-wrapper {
+  position:absolute;
+  top:0; left:0; right:0; bottom:0;
+}
+
+.slideshow { 
+  position:relative;
+  height:100%;
+  width:100%;
+  border:1px solid var(--slideshow-borderColor); 
+  overflow:hidden;
+  background:var(--slideshow-bgColor);
+
+  &__slides {
+    position:relative;
+    height:100%;
+    width:100%;
+  }
+
+  &__picture img { 
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);          
+    opacity:0;
+    width:100%;
+    height:auto;
+    transition: opacity .5s;
+  }
+
+  &__picture[data-is-active="true"] img {
+    opacity:1;
+    transition:opacity .2s;
+  }
+}
+
+.slideshow .jump-trigger {
+  width:33%; 
+  position:absolute;
+  top:0; 
+  bottom:0; 
+  z-index:3;
+  cursor:pointer;
+
+  &--back {
+    left:0;
+  }
+
+  &--next {
+    right:0;
+  }
+
+  &__icon {
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    height:var(--slideshowJumpTrigger-size);
+    width:var(--slideshowJumpTrigger-size); 
+    border-radius:100%;
+    background:var(--slideshowJumpTrigger-bgColor);
+    text-align:center;
+    transition: var(--transition-swoop);
+
+    &:before {
+      position:relative;
+      top:15px;
+      content:'';
+      display:inline-block;
+      height:12px;
+      width:12px;
+      border-style:solid;
+      border-color:var(--slideshowJumpTriggerArrow-borderColor);
+      border-width:3px 0 0 3px;
+      transform-origin:center center;
+    }
+  }
+
+  &:hover .jump-trigger__icon {
+    background:var(--slideshowJumpTrigger-hover-bgColor);
+    transform:translateY(-50%) scale(2);
+    box-shadow:0 0 5px var(--slideshowJumpTrigger-hover-shadowColor);
+
+    &:before {
+      border-color:var(--slideshowJumpTriggerArrow-hover-borderColor);          
+    }
+  }
+
+  &:active .jump-trigger__icon {
+    transition:var(--transition-bounce);
+    transform:translateY(-50%) scale(1.8);
+  }
+
+  &--back .jump-trigger__icon {
+    left:calc(var(--slideshowJumpTrigger-offset) * -1);
+
+    &:before {
+      transform:rotate(-55deg) skew(-20deg);
+      left:14px;
+    }
+  }
+
+  &--next .jump-trigger__icon {
+    right:calc(var(--slideshowJumpTrigger-offset) * -1);
+
+    &:before {
+      transform:rotate(128deg) skew(-20deg);
+      right:12px;
+    }
+  }
+}
