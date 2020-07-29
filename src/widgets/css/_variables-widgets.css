@@ -5,7 +5,12 @@
   --dropdownItem-textColor: green;
   --dropdownItem-borderColor: #ddd;
   --dropdownItem-hover-bgColor: #334;
+  --dropdownItem-hover-textColor: var(--textcolor-inverted);
   --dropdownItem-hover-fontWeight: bold;
+  --dropdownItem-active-bgColor: var(--bgcolor-base);
+  --dropdownItem-active-textColor: var(--textcolor-base);
+  --dropdownItem-active-fontWeight: bold;
+  
 
   /* Popupizer */
   --popupizerWindow-maxWidth: 1100px;
@@ -27,18 +32,17 @@
   --slideshow-borderColor: #bbb;
   --slideshowJumpTrigger-size: 50px;
   --slideshowJumpTrigger-offset:  calc(var(--slideshowJumpTrigger-size) / 2);
-
   --slideshowJumpTrigger-bgColor: rgba(0,0,0,.5);
   --slideshowJumpTriggerArrow-borderColor: #fff;
   --slideshowJumpTrigger-hover-bgColor:#fff;
-  --slideshowJumpTrigger-hover-shadowColor:#fff;
+  --slideshowJumpTrigger-hover-shadowColor:#444;
   --slideshowJumpTriggerArrow-hover-borderColor:#000;
 
   /* Video Player */
   --videoPlayerVideoFrame-bgColor: #000;
   --videoPlayerCpanel-bgColor: #000;
   --videoPlayerCpanel-textColor: var(--textcolor-inverted);
-  --videoPlayerCpanel-iconColor: yellow;
+  --videoPlayerCpanel-iconColor: var(--textcolor-inverted);
   --videoPlayerCpanel-borderColor: #ddd;  
   --videoPlayerProgressMeter-bgColor: #606;
   --videoPlayerProgressMeterPercentComplete-bgColor: #909;

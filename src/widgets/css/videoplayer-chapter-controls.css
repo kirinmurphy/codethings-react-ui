@@ -14,7 +14,11 @@
     }
 
     &[data-is-active="true"] {
-      background:var(--textcolor-inverted);
+      cursor:default;
+    }
+
+    &[data-is-active="true"] .position {
+      color:inherit;
     }
   }
 

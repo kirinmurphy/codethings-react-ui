@@ -1,0 +1,31 @@
+* { box-sizing: border-box; }
+
+body,
+p,
+dl, dt, dd,
+h1, h2, h3, h4,
+ul, ol, li {
+  margin: 0; 
+  padding: 0;
+  line-height:1.6;
+}
+
+body { 
+  font-family: var(--page-fontFamily);
+  font-size: var(----page-fontSizeBaseInPixels);
+  color: var(--textcolor-base);
+  background:var(--page-bgColor);
+}
+
+button {
+  padding:.25rem .5rem;
+  border: none;
+  cursor:pointer;
+  font-size:inherit;
+
+}
+
+ul.bulleted,
+ol.bulleted {
+  margin-left:1.5rem;
+}

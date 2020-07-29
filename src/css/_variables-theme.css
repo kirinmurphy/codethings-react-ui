@@ -1,0 +1,35 @@
+:root {
+  /* -- COLORS -------------- */
+  --textcolor-light: #666;
+  --textcolor-base: #333;
+  --textcolor-dark: #222;
+  --textcolor-inverted: #fff;
+
+  --bgcolor-base: #fff;
+
+  /* Links */
+  --textcolor-link: pink;
+  --textcolor-link-hover: purple;
+  --textcolor-link-inverted: var(--textcolor-inverted);
+  --textcolor-link-inverted-hover: var(--textcolor-inverted);
+
+  /* -- TYPOGRAPHY -------------- */
+  --fontSize-small: .8rem;
+  --fontSize-bump: 1.1rem;
+  --fontSize-highlight: 1.25rem;
+  --fontSize-title-small: 1.5rem;
+  --fontSize-title-medium: 1.75rem;
+  --fontSize-title-big: 2rem;
+  --fontSize-title-huge: 2.4rem;
+
+  /* TRANSITIONS -------------- */
+  --transition-swoop: all 0.8s cubic-bezier(0.19, 1, 0.22, 1); 
+  --transition-swoop-easing: cubic-bezier(0.19, 1, 0.22, 1);
+  --transition-bounce: transform 0.05s cubic-bezier(0.68,-0.55,0.265,1.55);
+
+
+  /* VIEWS ------------------- */
+  --page-bgColor: #a9a;
+  --page-fontSizeBaseInPixels: 16px;
+  --page-fontFamily: Helvetica, Arial, sans-serif;
+}

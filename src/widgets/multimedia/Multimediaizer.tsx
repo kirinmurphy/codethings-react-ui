@@ -1,11 +1,11 @@
 import * as React from 'react';
 
-import { MultimediaProps } from './types';
+import { MultimediaizerProps } from './types';
 
 import { SlideshowPopup } from './SlideshowPopup';
 import { VideoPlayer } from './videoPlayer/VideoPlayer';
 
-export function hasMultimediaContent (multimedia: MultimediaProps): boolean {
+export function hasMultimediaContent (multimedia: MultimediaizerProps): boolean {
   if ( !multimedia ) { return false; }
   const { type, images, video, iframeUrl } = multimedia;
   const hasImages = type === 'slideshow' && !!images && !!images.length;
@@ -19,7 +19,7 @@ export function Multimediaizer ({
   type, 
   images, 
   video, 
-  iframeUrl }: MultimediaProps): JSX.Element {
+  iframeUrl }: MultimediaizerProps): JSX.Element {
 
   return (
     <section className={`multimediaizer multimediaizer-${type}`}>

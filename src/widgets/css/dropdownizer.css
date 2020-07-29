@@ -46,9 +46,15 @@
       border-bottom:1px solid var(--dropdownItem-borderColor);
     }
 
-    &:hover {
+    &[data-is-active="true"] {
+      background:var(--dropdownItem-active-bgColor);
+      color:var(--dropdownItem-active-textColor);
+      font-weight:var(--dropdownItem-active-fontWeight);
+    }
+
+    &:not([data-is-active="true"]):hover {
       background:var(--dropdownItem-hover-bgColor);
-      color:#fff;
+      color:var(--dropdownItem-hover-textColor);
       font-weight:var(--dropdownItem-hover-fontWeight);
     }
   }

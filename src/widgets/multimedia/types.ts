@@ -2,7 +2,7 @@
 // MARQUEE PROPS
 export type MultimediaType = 'iframe' | 'slideshow' | 'video';
 
-export interface MultimediaProps {
+export interface MultimediaizerProps {
   type: MultimediaType;
   images: string[];
   video: VideoProps;
