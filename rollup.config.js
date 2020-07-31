@@ -4,7 +4,7 @@ import pkg from './package.json';
 import postcss from 'rollup-plugin-postcss';
 import nested from 'postcss-nested';
 // import cssnext from 'postcss-cssnext';
-import cssnano from 'cssnano';
+// import cssnano from 'cssnano';
 
 export default {
   input: 'src/index.tsx',
@@ -26,7 +26,7 @@ export default {
       plugins: [
         nested(),
         // cssnext({ warnForDuplicates: false }),
-        cssnano()
+        // cssnano()
       ]
     }),
   ],

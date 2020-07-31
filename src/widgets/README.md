@@ -1,5 +1,7 @@
 
 ## Widgets!
+View examples [here](https://eloquent-ritchie-014bec.netlify.app/)
+
 ### Ellipticizer
 ```
 <Ellipticizer width={'200px'}>content too long for the row</Ellipticizer>
