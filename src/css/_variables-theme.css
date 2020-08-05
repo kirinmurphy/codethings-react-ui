@@ -8,8 +8,8 @@
   --bgcolor-base: #fff;
 
   /* Links */
-  --textcolor-link: pink;
-  --textcolor-link-hover: purple;
+  --textcolor-link: #1982bd;
+  --textcolor-link-hover: #000;
   --textcolor-link-inverted: var(--textcolor-inverted);
   --textcolor-link-inverted-hover: var(--textcolor-inverted);
 
