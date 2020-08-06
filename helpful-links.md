@@ -23,3 +23,6 @@ https://medium.com/@tomaszmularczyk89/guide-to-building-a-react-components-libra
 ### PostCSS
 https://nextjs.org/docs/basic-features/built-in-css-support#import-styles-from-node_modules   
 https://www.learnwithjason.dev/blog/learn-rollup-css/   
+
+### Jest integration
+https://www.grzegorowski.com/react-typescript-library-rollup-jest-tests-setup
