@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 
 import { MSG_BACK_LINK } from '../utils/dictionary';
 

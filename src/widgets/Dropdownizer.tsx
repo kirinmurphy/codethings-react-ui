@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { useState, useRef } from 'react';
 
 import { useCallbackOnExternalEventTrigger } from '../utils/useCallbackOnExternalEventTrigger';

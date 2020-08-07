@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 
 export function openActiveImageInNewWindow (imageUrl: string | null): void {
   if ( imageUrl ) { window.location.href = imageUrl; }  

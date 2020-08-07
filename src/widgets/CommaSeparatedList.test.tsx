@@ -1,4 +1,5 @@
-import * as React from 'react';
+import '@testing-library/jest-dom';
+import React from 'react';
 import { render, screen } from "@testing-library/react";
 
 import { CommaSeparatedList } from './CommaSeparatedList';
@@ -20,7 +21,7 @@ describe("<CommaSeparatedList/>", () => {
     const mockList = ["item1", "item2"];
     render(<CommaSeparatedList collection={mockList} />);
     const container = screen.getByText(`${mockList[0]},`).closest('.comma-separated-list');
-    expectElementGone(container, 'strong');
+    expect(container).not.toContainHTML('<strong>');
   });
 
   test('should include markdown content if supplied in a list item', () => {
@@ -28,26 +29,6 @@ describe("<CommaSeparatedList/>", () => {
     const linkHref = 'http://www.whatever';
     const mockListWithMarkdown = [`[${linkText}](${linkHref})`];
     render(<CommaSeparatedList collection={mockListWithMarkdown} />);
-    expect(screen.getByText(linkText).closest('a')?.getAttribute('href')).toBe(linkHref);
+    expect(screen.getByText(linkText).closest('a')).toHaveAttribute('href', linkHref);
   });
 });
-
-function expectElementGone (container: Element | null, element: string) {
-  expect(containerHasElement(container, element)).toBe(false);
-}
-
-// TODO - this is pretty hacky, how can i do this better? 
-function containerHasElement (container: Element | null, element: string) {
-  const splitParts = container?.innerHTML.split(`<${element}>`);
-  return !!splitParts && splitParts?.length > 1;
-}
-
-// function hasJoinedText (node: Element, expectedOutput: string): boolean {
-//   const hasText = (node: Element) => node.textContent === expectedOutput;
-//   const nodeHasText = hasText(node);
-//   const childrenDontHaveText = Array.from(node.children).every(
-//     (child) => !hasText(child)
-//   );
-
-//   return nodeHasText && childrenDontHaveText;
-// }

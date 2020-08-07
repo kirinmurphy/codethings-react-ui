@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 
 import '../utils/fontAwesomeLibrary';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

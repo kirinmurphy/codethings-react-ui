@@ -1,6 +1,6 @@
 {
   "name": "codethings-react-ui",
-  "version": "1.0.28",
+  "version": "1.0.29",
   "description": "library of react UI widgets and helpers",
   "main": "dist/index.js",
   "scripts": {
@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/kirinmurphy/codethings-react-ui#readme",
   "devDependencies": {
+    "@testing-library/jest-dom": "^5.11.2",
     "@testing-library/react": "^10.4.8",
     "@types/jest": "^26.0.9",
     "@types/react": "^16.9.43",

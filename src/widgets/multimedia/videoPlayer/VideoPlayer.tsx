@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { useState, useRef, useEffect, useReducer } from 'react';
 
 import { MSG_OPEN_IN_NEW_WINDOW } from '../../../utils/dictionary';

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 
 import { 
   MSG_VIDEO_PLAYER_CURRENT_CHAPTER_LABEL, 
