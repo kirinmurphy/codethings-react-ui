@@ -26,3 +26,4 @@ https://www.learnwithjason.dev/blog/learn-rollup-css/
 
 ### Jest integration
 https://www.grzegorowski.com/react-typescript-library-rollup-jest-tests-setup
+https://www.polvara.me/posts/five-things-you-didnt-know-about-testing-library/
