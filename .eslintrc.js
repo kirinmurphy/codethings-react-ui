@@ -7,7 +7,9 @@ module.exports = {
   "extends": [
     "eslint:recommended",
     "plugin:react/recommended",
-    "plugin:@typescript-eslint/recommended"
+    "plugin:@typescript-eslint/recommended",
+    "plugin:jest-dom/recommended",
+    "plugin:testing-library/recommended"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
@@ -19,7 +21,9 @@ module.exports = {
   },
   "plugins": [
     "react",
-    "@typescript-eslint"
+    "@typescript-eslint",
+    "testing-library",
+    "jest-dom"
   ],
   "rules": {
     'indent': ['error', 2],

@@ -28,3 +28,5 @@ https://www.learnwithjason.dev/blog/learn-rollup-css/
 https://www.grzegorowski.com/react-typescript-library-rollup-jest-tests-setup
 https://www.polvara.me/posts/five-things-you-didnt-know-about-testing-library/
 https://github.com/testing-library/jest-dom
+https://stackoverflow.com/questions/59132347/how-to-define-container-size-for-react-testing-library
+https://kentcdodds.com/blog/common-mistakes-with-react-testing-library
