@@ -1,13 +1,15 @@
 import React from 'react';
 import { useState, useRef, useEffect, useReducer } from 'react';
 
+import { isBrowser } from 'react-device-detect';
+
 import { MSG_OPEN_IN_NEW_WINDOW } from '../../../utils/dictionary';
 
 import { 
   VideoProps, 
   VideoPlayerOptionsProps, 
   VideoDisplayDataProps, 
-  VideoPlayerActionTypes 
+  VideoPlayerActionTypes,
 } from '../types';
 
 import { 
@@ -25,12 +27,27 @@ import { VideoPlayerTime } from './VideoPlayerTime';
 import { VideoProgressMeter } from './VideoProgressMeter';
 import { PlayerStateTriggers } from './PlayerStateTriggers';
 import { ChapterTriggers } from './ChapterTriggers';
+import { VideoSources } from './VideoSources';
 
 interface Props {
   video: VideoProps;
 }
 
 export function VideoPlayer ({ video }: Props): JSX.Element {
+  return (
+    <div className="video-player" data-is-browser={isBrowser}>
+      {isBrowser && <CustomVideoPlayer video={video} />}
+
+      {!isBrowser && (
+        <video preload="auto" controls poster={video.poster}>
+          <VideoSources sources={video.sources} />
+        </video>
+      )}
+    </div>
+  );
+}
+
+function CustomVideoPlayer ({ video }: Props): JSX.Element {
   const videoPlayerRef = useRef<HTMLVideoElement>(null);
 
   const initialPlayerState = {
@@ -90,11 +107,9 @@ export function VideoPlayer ({ video }: Props): JSX.Element {
   };
 
   return (
-    <div className="video-player">
+    <>
       <video ref={videoPlayerRef} preload="auto" {...options}>
-        {video.sources.map(({ src, type }, index) => (
-          <source key={index} src={src} type={type} />
-        ))};
+        <VideoSources sources={video.sources} />
       </video>
 
       <div className="video-player__cpanel">
@@ -143,6 +158,6 @@ export function VideoPlayer ({ video }: Props): JSX.Element {
           {MSG_OPEN_IN_NEW_WINDOW}
         </span>
       </div>
-    </div>
+    </>
   );
 }

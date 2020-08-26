@@ -21,8 +21,12 @@
 
   video {
     width:100%;
-    height:calc(100% - var(--video-cpanel-height));
+    height:100%;
     background:var(--videoPlayerVideoFrame-bgColor);
+  }
+
+  &[data-is-browser="true"] video {
+    height:calc(100% - var(--video-cpanel-height));
   }
 
   &__cpanel {
