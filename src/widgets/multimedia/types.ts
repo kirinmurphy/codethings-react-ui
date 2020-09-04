@@ -30,6 +30,7 @@ export interface VideoChapterProps {
 export interface VideoProps extends VideoPlayerOptionsProps {
   sources: VideoSourceProps[];
   chapters?: FormattedVideoChapterProps[];
+  rawChapters?: any;
 }
 
 // Formatted / computed props

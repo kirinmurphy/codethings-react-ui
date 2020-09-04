@@ -4,6 +4,7 @@ a,
 .panel--default .link {
   text-decoration:none; 
   color: var(--textcolor-link);
+  cursor:pointer;
 }
 
 a:hover,
@@ -12,6 +13,10 @@ a:hover,
 .panel--default .link:hover {
   text-decoration:underline;
   color: var(--textcolor-link-hover);
+}
+
+.panel--inverted {
+  color:var(--textcolor-inverted);
 }
 
 .panel--inverted a,
