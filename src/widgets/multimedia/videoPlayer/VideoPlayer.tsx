@@ -28,24 +28,15 @@ import { VideoProgressMeter } from './VideoProgressMeter';
 import { PlayerStateTriggers } from './PlayerStateTriggers';
 import { ChapterTriggers } from './ChapterTriggers';
 import { VideoSources } from './VideoSources';
-import { getFormattedChapters } from './helperGetFormattedChapters';
 
 interface Props {
   video: VideoProps;
 }
 
 export function VideoPlayer ({ video }: Props): JSX.Element {
-  console.log('GG chapters', video.chapters);
-  console.log('EE chapters', video.rawChapters);
-
-  const formattedChapters = getFormattedChapters(video.rawChapters);
-
   return (
     <div className="video-player" data-is-browser={isBrowser}>
-      {isBrowser && <CustomVideoPlayer video={{ 
-        ...video,
-        chapters: formattedChapters 
-      }} />}
+      {isBrowser && <CustomVideoPlayer video={video} />}
 
       {!isBrowser && (
         <video preload="auto" controls poster={video.poster}>

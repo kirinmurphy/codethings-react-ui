@@ -30,5 +30,3 @@ export { BackLink } from './widgets/BackLink';
 export { ExpandoClicker, openActiveImageInNewWindow } from './widgets/multimedia/ExpandoClicker';
 export { Multimediaizer, hasMultimediaContent } from './widgets/multimedia/Multimediaizer';
 export { MultimediaizerProps } from './widgets/multimedia/types';
-export { getFormattedVideoTime } from './widgets/multimedia/videoPlayer/helperGetFormattedVideoTime';
-export { getFormattedChapters } from './widgets/multimedia/videoPlayer/helperGetFormattedChapters';

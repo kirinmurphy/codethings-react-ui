@@ -90,30 +90,14 @@ const videoProps = {
   ...
   poster: 'image-file-displayed-before-video-loaded.png',
   chapters: [
-    { startTime: 0, title: 'Chapter 1' },
-    { startTime: 360, title: 'Chapter 2' }
+    { startTime: '0:00', title: 'Chapter 1' },
+    { startTime: '5:00', title: 'Chapter 2' }
   ]
 };
 
 <Multimediaizer {...videoProps} />
 ```
-
-#### getFormattedChapters: 
-By default `startTime` is required in seconds. `startTime` can be written as a string in format of `'[HH.MM.]SS'` by passing the chapter config through the `getFormattedChapters` helper.
-```
-import { Multimediaizer, getFormattedChapters } from 'codethings-react-ui';
-
-<Multimediaizer
-  type="video"
-  video={
-    source: {...},
-    chapters: getFormattedChapters([
-      { startTime: '0:00', title: 'Chapter 1' },
-      { startTime: '5:00', title: 'Chapter 2' }
-    ])
-  } 
-/>
-```
+If the first chapter start time is not '0:00', an un-titled starting chapter will be added to the collection.
 
 #### Iframe
 Displays url in iframe window
