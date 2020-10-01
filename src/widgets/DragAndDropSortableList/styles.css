@@ -1,0 +1,30 @@
+
+/* LIST */
+.drag-and-drop-list li {
+  background:var(--bgcolor-light);
+  padding:1rem;
+  margin-bottom:.5rem;
+  border-top:0px solid #000;
+  transition: var(--transition-swoop);
+  cursor:ns-resize;
+}
+
+.drag-and-drop-list li:hover {
+  background:#ddd;
+}
+
+.drag-and-drop-list .dragging,
+.drag-and-drop-list .dragging:hover {
+  background:var(--color-blue-dark);
+  color:var(--textcolor-inverted);
+}
+
+.drag-and-drop-list .being-hovered {
+  border-top-width:10px;
+}
+
+/* ??? fixes a weird problem where dragleave event fires 
+ if hovering over child elements of the draggable element */
+.drag-and-drop-list .being-hovered * {
+  pointer-events: none;
+}

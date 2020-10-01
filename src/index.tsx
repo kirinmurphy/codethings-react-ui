@@ -32,3 +32,5 @@ export { BackLink } from './widgets/BackLink';
 export { ExpandoClicker, openActiveImageInNewWindow } from './widgets/multimedia/ExpandoClicker';
 export { Multimediaizer, hasMultimediaContent } from './widgets/multimedia/Multimediaizer';
 export { MultimediaizerProps } from './widgets/multimedia/types';
+
+export { DragAndDropSortableList } from './widgets/DragAndDropSortableList';
