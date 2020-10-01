@@ -1,0 +1,13 @@
+.center-text-ellipticizer {
+  width:100%;
+  white-space:nowrap;
+  line-height:1.5rem;
+  height:1.5rem;
+}
+
+.center-text-ellipticizer__hidden-real-text {
+  height:0;
+  visibility: hidden;
+  line-height:0;
+  overflow:hidden;
+}

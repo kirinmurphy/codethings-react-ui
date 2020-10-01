@@ -6,6 +6,7 @@ import './css/panel.css';
 import './widgets/css/_variables-widgets.css';
 import './widgets/css/back-link.css';
 import './widgets/css/ellipticizer.css';
+import './widgets/css/center-text-ellipticizer.css';
 import './widgets/css/loading-icon.css';
 import './widgets/css/dropdownizer.css';
 import './widgets/css/popupizer.css';
@@ -19,6 +20,7 @@ import './widgets/css/videoplayer-chapter-controls.css';
 export { useTriggerOverride } from './utils/useTriggerOverride';
 export { useCallbackOnExternalEventTrigger } from './utils/useCallbackOnExternalEventTrigger';
 
+export { CenterTextEllipticizer } from './widgets/CenterTextEllipticizer';
 export { Ellipticizer } from './widgets/Ellipticizer';
 export { Markdownizer, MarkdownizerProps } from './widgets/Markdownizer';
 export { CommaSeparatedList, CommaSeparatedListCollectionType } from './widgets/CommaSeparatedList';
