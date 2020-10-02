@@ -9,12 +9,12 @@ export type ItemTemplateType = (arg0: number, arg1: string) => JSX.Element;
 interface Props {
   itemTemplate: ItemTemplateType;
   collection: CollectionType;
-  updateOnReorder: (arg0: CollectionType) => void;
+  onAfterReSort: (arg0: CollectionType) => void;
 }
 
 export function DragAndDropSortableList (props: Props): JSX.Element {
 
-  const { itemTemplate, collection, updateOnReorder } = props;
+  const { itemTemplate, collection, onAfterReSort } = props;
 
   const [activeDragIndex, setActiveDragIndex] = useState<number>(0);
 
@@ -25,7 +25,7 @@ export function DragAndDropSortableList (props: Props): JSX.Element {
     collection.splice(dropIndex, 0, listItemInTransit);
     const removeIndex = collection.indexOf(PENDING_STATE);
     collection.splice(removeIndex, 1);
-    updateOnReorder(collection);
+    onAfterReSort(collection);
   } 
 
   return (

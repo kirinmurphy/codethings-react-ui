@@ -1,5 +1,8 @@
+.drag-and-drop-list,
+.drag-and-drop-list li {
+  list-style-type:none;
+}
 
-/* LIST */
 .drag-and-drop-list li {
   background:var(--bgcolor-light);
   padding:1rem;
@@ -7,6 +10,7 @@
   border-top:0px solid #000;
   transition: var(--transition-swoop);
   cursor:ns-resize;
+  background:#eee;
 }
 
 .drag-and-drop-list li:hover {

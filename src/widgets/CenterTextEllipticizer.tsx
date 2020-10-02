@@ -42,7 +42,7 @@ export function CenterTextEllipticizer (props: Props): JSX.Element {
       {/* Had to check the length of the question without the trucation impacting the value
       so added the full question to the DOM hidden in CSS and checking that width instead. */}
       
-      <div>{formattedText}</div>
+      <div title={rawText}>{formattedText}</div>
       <span 
         ref={fullTextRef} 
         className="center-text-ellipticizer__hidden-real-text">

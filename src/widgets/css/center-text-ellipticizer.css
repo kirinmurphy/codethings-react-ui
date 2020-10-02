@@ -3,6 +3,7 @@
   white-space:nowrap;
   line-height:1.5rem;
   height:1.5rem;
+  overflow:hidden;
 }
 
 .center-text-ellipticizer__hidden-real-text {
