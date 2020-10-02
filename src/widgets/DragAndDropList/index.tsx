@@ -12,7 +12,7 @@ interface Props {
   onAfterReSort?: (arg0: CollectionType) => void;
 }
 
-export function DragAndDropSortableList (props: Props): JSX.Element {
+export function DragAndDropList (props: Props): JSX.Element {
 
   const { itemTemplate, collection, onAfterReSort } = props;
 

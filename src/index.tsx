@@ -16,7 +16,7 @@ import './widgets/css/multimediaizer.css';
 import './widgets/css/videoplayer.css';
 import './widgets/css/videoplayer-control-bar.css';
 import './widgets/css/videoplayer-chapter-controls.css';
-import './widgets/DragAndDropSortableList/styles.css';
+import './widgets/DragAndDropList/styles.css';
 
 export { useDebounce } from './utils/useDebounce';
 export { useTriggerOverride } from './utils/useTriggerOverride';
@@ -35,4 +35,4 @@ export { ExpandoClicker, openActiveImageInNewWindow } from './widgets/multimedia
 export { Multimediaizer, hasMultimediaContent } from './widgets/multimedia/Multimediaizer';
 export { MultimediaizerProps } from './widgets/multimedia/types';
 
-export { DragAndDropSortableList } from './widgets/DragAndDropSortableList';
+export { DragAndDropList } from './widgets/DragAndDropList';

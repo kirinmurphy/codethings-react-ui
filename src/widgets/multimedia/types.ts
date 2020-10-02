@@ -4,10 +4,15 @@ export type MultimediaType = 'iframe' | 'slideshow' | 'video';
 
 export interface MultimediaizerProps {
   type: MultimediaType;
-  images: string[];
   video: VideoProps;
+  slideshow: SlideshowProps;
   iframeUrl: string;
   fullscreen?: boolean;
+}
+
+export interface SlideshowProps {
+  images: string[];
+  autoAdvanceDelay: number;
 }
 
 // MARQUEE VIDEO PROPS

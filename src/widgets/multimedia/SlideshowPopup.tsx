@@ -12,16 +12,17 @@ import { openActiveImageInNewWindow } from './ExpandoClicker';
 
 interface Props {
   images: string[];
+  autoAdvanceDelay?: number;
 }
 
-export function SlideshowPopup ({ images }: Props): JSX.Element {
+export function SlideshowPopup ({ images, autoAdvanceDelay = 5000 }: Props): JSX.Element {
   const [showFullScreen, setFullScreenState] = useState<boolean>(false);
 
   return (
     <>
       <div className="slideshow-wrapper uses-expando-trigger">
         <Slideshow
-          autoRotateDelay={5000}
+          autoAdvanceDelay={autoAdvanceDelay}
           images={images}
           showSmallImageAtMaxWidth={true}
           expandoButtonText={MSG_FULL_SCREEN_VIEW}

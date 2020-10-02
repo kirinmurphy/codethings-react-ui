@@ -9,7 +9,7 @@ import { ExpandoClicker } from './ExpandoClicker';
 interface SlideshowProps {
   images: string[];
   showSmallImageAtMaxWidth: boolean;
-  autoRotateDelay?: number;
+  autoAdvanceDelay?: number;
   expandoButtonText: string;
   expandoClickCallback: (arg0: string | null) => void;
 }
@@ -17,7 +17,7 @@ interface SlideshowProps {
 export function Slideshow ({ 
   images, 
   showSmallImageAtMaxWidth,
-  autoRotateDelay, 
+  autoAdvanceDelay, 
   expandoButtonText, 
   expandoClickCallback }: SlideshowProps): JSX.Element {
 
@@ -32,13 +32,13 @@ export function Slideshow ({
   const backIndex = atBeginning ? imageCount - 1 : activeIndex - 1;
   
   useEffect(() => {
-    if ( imageCount > 1 && !!autoRotateDelay ) {
+    if ( imageCount > 1 && !!autoAdvanceDelay ) {
       // added a little time offset so the slideshows switch at slightly different times;
-      const duration = autoRotateDelay + (Math.random() * 2000);
+      const duration = autoAdvanceDelay + (Math.random() * 1000);
       const timeout = setTimeout(() => { setActiveIndex(nextIndex); }, duration); 
       return () => { clearTimeout(timeout); };   
     } else { return; }
-  }, [nextIndex, autoRotateDelay, imageCount]);
+  }, [nextIndex, autoAdvanceDelay, imageCount]);
 
   return (
     <div className="slideshow">
