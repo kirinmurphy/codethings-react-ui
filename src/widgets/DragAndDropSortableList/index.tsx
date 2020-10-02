@@ -9,7 +9,7 @@ export type ItemTemplateType = (arg0: number, arg1: string) => JSX.Element;
 interface Props {
   itemTemplate: ItemTemplateType;
   collection: CollectionType;
-  onAfterReSort: (arg0: CollectionType) => void;
+  onAfterReSort?: (arg0: CollectionType) => void;
 }
 
 export function DragAndDropSortableList (props: Props): JSX.Element {
@@ -25,7 +25,7 @@ export function DragAndDropSortableList (props: Props): JSX.Element {
     collection.splice(dropIndex, 0, listItemInTransit);
     const removeIndex = collection.indexOf(PENDING_STATE);
     collection.splice(removeIndex, 1);
-    onAfterReSort(collection);
+    if ( onAfterReSort ) { onAfterReSort(collection); }
   } 
 
   return (

@@ -15,7 +15,7 @@ interface conditionProps {
 export type triggerOverrideCallbackType = (arg0:eventDataProps) => void;
 
 interface useTriggerOverrideProps {
-  eventType: 'click' | 'mousedown';
+  eventType: 'click' | 'mousedown' | 'mouseup';
   ref: GenericRefTypeUntilIFigureOutTheCommonDenominator;  
   condition: (arg0: conditionProps) => boolean;
   conditionalCallback: triggerOverrideCallbackType;

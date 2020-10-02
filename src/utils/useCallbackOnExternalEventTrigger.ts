@@ -10,7 +10,7 @@ export function useCallbackOnExternalEventTrigger (
   callback:triggerOverrideCallbackType): void {
   
   useTriggerOverride({ 
-    eventType: 'mousedown', 
+    eventType: 'mouseup', 
     ref: ref, 
     condition: ({ ref, event }) => {
       return !ref.current.contains(event.target);

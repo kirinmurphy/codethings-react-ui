@@ -44,6 +44,6 @@
   --videoPlayerCpanel-textColor: var(--textcolor-inverted);
   --videoPlayerCpanel-iconColor: var(--textcolor-inverted);
   --videoPlayerCpanel-borderColor: #ddd;  
-  --videoPlayerProgressMeter-bgColor: #606;
-  --videoPlayerProgressMeterPercentComplete-bgColor: #909;
+  --videoPlayerProgressMeter-bgColor: #39a2dd;
+  --videoPlayerProgressMeterPercentComplete-bgColor: #0972bd;
 }
