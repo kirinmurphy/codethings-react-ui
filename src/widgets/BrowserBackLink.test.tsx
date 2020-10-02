@@ -1,17 +1,17 @@
 import React from 'react';
 import { render, screen, fireEvent } from "@testing-library/react";
 
-import { BackLink } from './BackLink';
+import { BrowserBackLink } from './BrowserBackLink';
 import { MSG_BACK_LINK } from '../utils/dictionary';
 
-describe("<BackLink/>", () => {
+describe("<BrowserBackLink/>", () => {
   test('link text', () => {
-    render(<BackLink/>);
+    render(<BrowserBackLink/>);
     expect(screen.getByText(MSG_BACK_LINK)).toBeDefined();
   });
 
   test('link click', () => {
-    render(<BackLink/>);
+    render(<BrowserBackLink/>);
     fireEvent.click(screen.getByText(MSG_BACK_LINK));
     expect(1).toBe(1);
   });

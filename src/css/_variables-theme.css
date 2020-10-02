@@ -27,7 +27,6 @@
   --transition-swoop-easing: cubic-bezier(0.19, 1, 0.22, 1);
   --transition-bounce: transform 0.05s cubic-bezier(0.68,-0.55,0.265,1.55);
 
-
   /* VIEWS ------------------- */
   --page-bgColor: #fff;
   --page-fontSizeBaseInPixels: 16px;

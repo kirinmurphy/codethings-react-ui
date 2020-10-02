@@ -6,7 +6,7 @@ import '../utils/fontAwesomeLibrary';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleLeft } from '@fortawesome/free-solid-svg-icons';
 
-export function BackLink (): JSX.Element {
+export function BrowserBackLink (): JSX.Element {
   return (
     <>
       <a className="back-link" 

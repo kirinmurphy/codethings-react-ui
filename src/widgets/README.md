@@ -1,10 +1,31 @@
 
 ## Widgets!
-View examples [here](https://eloquent-ritchie-014bec.netlify.app/)
+View [demo examples](https://reactui.codethings.net)
+### LoadingIcon
+```
+<LoadingIcon />
+```
+
+### BrowserBackLink
+```
+<BrowserBackLink />
+```
 
 ### Ellipticizer
 ```
-<Ellipticizer width={'200px'}>content too long for the row</Ellipticizer>
+<Ellipticizer width={'150px'}>content too long for the row</Ellipticizer>
+```
+
+### CenterTextEllipticizer
+```
+<CenterTextEllipticizer rawText={variedLengthTextString} />
+```
+when the text is a bit wider than the container, will render `Beginning of text, middl...ext, end of text.`    
+
+### Markdownizer
+Just a wrapper for `<ReactMarkdown />` component with some hard coded presets.  Not meant for unsanitized user content.
+```
+<Markdownizer source={source}>
 ```
 
 ### CommaSeparatedList
@@ -15,15 +36,16 @@ View examples [here](https://eloquent-ritchie-014bec.netlify.app/)
 />
 ```
 
-### Markdownizer
-Wrapper for `<ReactMarkdown />` component.
-```
-<Markdownizer source={source}>
-```
 
-### LoadingIcon
+### Popupizer
 ```
-<LoadingIcon />
+const [popupState, setPopupState] = useState(false);
+return (
+  <button onClick={() => setPopupState(true)}>Open Popup</button>
+  {popupState && <Popupizer closeAction={() => { setPopupState(false) }}>
+    Popup Content
+  </Popupizer>}
+);
 ```
 
 ### Dropdownizer
@@ -41,32 +63,31 @@ option to open window above trigger
 <Dropdownizer title={...} content={...} orientation="above">
 ```
 
-### Popupizer
+### DragAndDropList 
 ```
-const [popupState, setPopupState] = useState(false);
-return (
-  <button onClick={() => setPopupState(true)}>Open Popup</button>
-  {popupState && <Popupizer closeAction={() => { setPopupState(false) }}>
-    Popup Content
-  </Popupizer>}
-);
+<DragAndDropList 
+  collection={["item1", "item2", "item3"]}
+  itemTemplate={(index, listItem) => (
+    <div className="list-item-wraperp">
+      <span className="index">{index+1}.</span>
+      <div className="text-wrapper">
+        <CenterTextEllipticizer rawText={listItem} />
+      </div>
+    </div>
+  )}
+  onAfterReordered={reorderedCollection => {
+    // this is triggered after the collection is updated, 
+    // but does not wait for the DOM to finish re-rendering
+    console.log('reordered complete!');
+    console.log('updated collection: ', reorderedCollection);
+  }}
+/>
 ```
+add/override styles for the moving pieces with the classes 
+`dragging` and `being-hovered`
 
 ### Multimediaizer
-Multimedia can display an image slideshow, iframe, or video with chapters.       
-
-#### Slideshow:
-```
-const slideshowProps = {
-  type: "slideshow"
-  images: [
-    'path-to-image1.jpg',
-    'https://www.site.com/image-file.png'
-  ]
-};
-
-<Multimediaizer {...slideshowProps} />
-```
+Display an image slideshow, iframe, or video with chapter navigation.       
 
 #### Video: 
 at lead one `source` required   
@@ -98,6 +119,36 @@ const videoProps = {
 <Multimediaizer {...videoProps} />
 ```
 If the first chapter start time is not '0:00', an un-titled starting chapter will be added to the collection.
+
+#### Slideshow:
+```
+const slideshowProps = {
+  type: "slideshow"
+  slideshow: {
+    images: [
+      'path-to-image1.jpg',
+      'https://www.site.com/image-file.png'
+    ]
+  }
+};
+
+<Multimediaizer {...slideshowProps} />
+```
+
+Optionally change the delay between slides
+```
+const slideshowProps = {
+  type: "slideshow"
+  slideshow: {
+    images: [...],
+    autoAdvanceDelay: 10000 // in ms
+  }
+};
+
+autoAdvanceDelay: null // will turn off the autoAdvance setting
+```
+
+
 
 #### Iframe
 Displays url in iframe window

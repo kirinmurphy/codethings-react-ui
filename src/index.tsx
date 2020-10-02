@@ -29,7 +29,7 @@ export { CommaSeparatedList, CommaSeparatedListCollectionType } from './widgets/
 export { Dropdownizer } from './widgets/Dropdownizer';
 export { LoadingIcon } from './widgets/LoadingIcon';
 export { Popupizer } from './widgets/Popupizer';
-export { BackLink } from './widgets/BackLink';
+export { BrowserBackLink } from './widgets/BrowserBackLink';
 
 export { ExpandoClicker, openActiveImageInNewWindow } from './widgets/multimedia/ExpandoClicker';
 export { Multimediaizer, hasMultimediaContent } from './widgets/multimedia/Multimediaizer';
