@@ -6,10 +6,7 @@ This is a work in progress built to bootstrap my other React stuff, and should p
 
 ## Install
 ```
-npm install codethings-react-ui --save
-
-- or -  
-
+npm install codethings-react-ui --save     
 yarn add codethings-react-ui 
 ```
 

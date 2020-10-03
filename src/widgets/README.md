@@ -68,7 +68,7 @@ option to open window above trigger
 <DragAndDropList 
   collection={["item1", "item2", "item3"]}
   itemTemplate={(index, listItem) => (
-    <div className="list-item-wraperp">
+    <div className="list-item-wrapper">
       <span className="index">{index+1}.</span>
       <div className="text-wrapper">
         <CenterTextEllipticizer rawText={listItem} />
