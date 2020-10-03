@@ -7,13 +7,12 @@ import { VideoPlayer } from './videoPlayer/VideoPlayer';
 
 export function hasMultimediaContent (multimedia: MultimediaizerProps): boolean {
   if ( !multimedia ) { return false; }
-  const { type, slideshow: { images }, video, iframeUrl } = multimedia;
-  const hasImages = type === 'slideshow' && !!images && !!images.length;
+  const { type, slideshow, video, iframeUrl } = multimedia;
+  const hasSlideshow = type === 'slideshow' && !!slideshow?.images?.length;
   const hasIframe = type === 'iframe' && !!iframeUrl;
-  const hasVideo = type === 'video' && !!video && !!video.sources.length;
-  return hasIframe || hasImages || hasVideo;
+  const hasVideo = type === 'video' && !!video?.sources?.length;
+  return hasSlideshow || hasIframe || hasVideo;
 }
-
 
 export function Multimediaizer ({ 
   type, 
