@@ -1,6 +1,6 @@
 {
   "name": "codethings-react-ui",
-  "version": "1.3.2",
+  "version": "1.3.3",
   "description": "library of react UI widgets and helpers",
   "main": "dist/index.js",
   "scripts": {
