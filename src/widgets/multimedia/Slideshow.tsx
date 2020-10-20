@@ -9,7 +9,7 @@ import { ExpandoClicker } from './ExpandoClicker';
 interface SlideshowProps {
   images: string[];
   showSmallImageAtMaxWidth: boolean;
-  autoAdvanceDelay?: number;
+  autoAdvanceDelay?: number | null;
   expandoButtonText: string;
   expandoClickCallback: (arg0: string | null) => void;
 }

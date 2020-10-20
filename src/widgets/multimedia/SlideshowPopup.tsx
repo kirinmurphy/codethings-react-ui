@@ -1,10 +1,10 @@
-import React from 'react'; 
-import { useState } from 'react';
+import React, { useState, useLayoutEffect, useRef } from 'react'; 
 
 import { 
   MSG_OPEN_IN_NEW_WINDOW,
   MSG_FULL_SCREEN_VIEW
 } from '../../utils/dictionary';
+import { useDebounce } from '../../utils/useDebounce';
 
 import { Popupizer } from '../Popupizer';
 import { Slideshow } from './Slideshow';
@@ -17,12 +17,34 @@ interface Props {
 
 export function SlideshowPopup ({ images, autoAdvanceDelay = 5000 }: Props): JSX.Element {
   const [showFullScreen, setFullScreenState] = useState<boolean>(false);
+  const [dynamicAutoAdvanceDelay, setDynamicAutoAdvanceDelay] = useState<number | null>(null);
+
+  const inlineSlideshowRef = useRef<HTMLDivElement>(null);
+
+  const [scrollDebouncer] = useDebounce({
+    callback: currentRef => {
+      const delay = halfOfImageIsVisible(currentRef) ? autoAdvanceDelay : null;
+      setDynamicAutoAdvanceDelay(delay);
+    },
+    updateDelay: 1000
+  });
+
+  useLayoutEffect(() => {
+    const currentRef = inlineSlideshowRef.current;
+    if ( currentRef && typeof(Window) !== 'undefined' ) {
+      const onScroll = () => scrollDebouncer(currentRef);
+      window.addEventListener('scroll', onScroll);
+      return () => window.removeEventListener('scroll', onScroll);
+    }
+    return;
+  }, []);
 
   return (
     <>
-      <div className="slideshow-wrapper uses-expando-trigger">
+      <div ref={inlineSlideshowRef}
+        className="slideshow-wrapper uses-expando-trigger">
         <Slideshow
-          autoAdvanceDelay={autoAdvanceDelay}
+          autoAdvanceDelay={dynamicAutoAdvanceDelay}
           images={images}
           showSmallImageAtMaxWidth={true}
           expandoButtonText={MSG_FULL_SCREEN_VIEW}
@@ -44,4 +66,13 @@ export function SlideshowPopup ({ images, autoAdvanceDelay = 5000 }: Props): JSX
       )}
     </>
   )
+}
+
+function halfOfImageIsVisible (currentRef: HTMLDivElement): boolean {
+  const { top, bottom, height } = currentRef.getBoundingClientRect();
+  const halfHeight = Math.floor(height / 2);
+  const windowHeight = window.innerHeight;
+  const topHalfVisible = top > 0 && (halfHeight + top) < windowHeight;
+  const bottomHalfVisible = bottom > halfHeight && bottom < height;
+  return topHalfVisible || bottomHalfVisible;
 }
