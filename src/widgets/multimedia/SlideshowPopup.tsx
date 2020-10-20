@@ -1,4 +1,4 @@
-import React, { useState, useLayoutEffect, useRef } from 'react'; 
+import React, { useState, useEffect, useRef } from 'react'; 
 
 import { 
   MSG_OPEN_IN_NEW_WINDOW,
@@ -29,7 +29,7 @@ export function SlideshowPopup ({ images, autoAdvanceDelay = 5000 }: Props): JSX
     updateDelay: 1000
   });
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     const currentRef = inlineSlideshowRef.current;
     if ( currentRef && typeof(Window) !== 'undefined' ) {
       const onScroll = () => scrollDebouncer(currentRef);
