@@ -15,7 +15,7 @@ interface Props {
   autoAdvanceDelay?: number;
 }
 
-export function SlideshowPopup ({ images, autoAdvanceDelay = 5000 }: Props): JSX.Element {
+export function SlideshowPopup ({ images, autoAdvanceDelay = 4000 }: Props): JSX.Element {
   const [showFullScreen, setFullScreenState] = useState<boolean>(false);
   const [dynamicAutoAdvanceDelay, setDynamicAutoAdvanceDelay] = useState<number | null>(null);
 
@@ -26,7 +26,7 @@ export function SlideshowPopup ({ images, autoAdvanceDelay = 5000 }: Props): JSX
       const delay = halfOfImageIsVisible(currentRef) ? autoAdvanceDelay : null;
       setDynamicAutoAdvanceDelay(delay);
     },
-    updateDelay: 1000
+    updateDelay: 750
   });
 
   useEffect(() => {
